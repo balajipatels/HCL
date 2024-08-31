@@ -1,0 +1,18 @@
+<div>
+  <!-- Form to add a name -->
+  <form [formGroup]="nameForm" (ngSubmit)="addName()">
+    <input formControlName="name" placeholder="Enter name">
+    <button type="submit">Add</button>
+  
+  </form>
+
+  <!-- Separate search input field -->
+  <form [formGroup]="searchForm">
+    <input formControlName="searchTerm" placeholder="Search names">
+  </form>
+
+  <!-- Display the filtered names as clickable links -->
+  <div *ngFor="let name of filteredNames">
+    <a href="#" (click)="onNameClick(name)">{{ name }}</a>
+  </div>
+</div>
