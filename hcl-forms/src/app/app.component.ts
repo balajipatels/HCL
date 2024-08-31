@@ -22,7 +22,6 @@ export class AppComponent {
       searchTerm: [''],
     });
 
-    // Subscribe to search input value changes for real-time filtering
     this.searchForm.get('searchTerm')?.valueChanges.subscribe((searchTerm) => {
       this.filterNames(searchTerm);
     });
@@ -33,7 +32,7 @@ export class AppComponent {
       const name = this.nameForm.get('name')?.value.trim();
       if (name && !this.names.includes(name)) {
         this.names.push(name);
-        this.filteredNames = [...this.names]; // Update the filtered list
+        this.filteredNames = [...this.names]; 
       }
       this.nameForm.reset();
     } else {
